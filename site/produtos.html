@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MILGEAR — Catálogo de ferramentas de uso militar</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪖</text></svg>" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header id="cabecalho"></header>
+
+  <main class="container">
+    <!-- ============== FILTROS (consulta /produto) ============== -->
+    <section class="cartao filtros">
+      <div class="grade-filtros">
+        <label class="campo campo-largo">
+          Buscar por nome
+          <input type="search" id="f-nome" placeholder="Ex.: lanterna, bússola, paracord..." />
+        </label>
+        <label class="campo">
+          Ordenar por preço
+          <select id="f-ordem">
+            <option value="">— sem ordenação —</option>
+            <option value="menor">Menor preço</option>
+            <option value="maior">Maior preço</option>
+          </select>
+        </label>
+        <label class="campo">
+          Categoria
+          <select id="f-categoria">
+            <option value="">Todas as categorias</option>
+          </select>
+        </label>
+        <label class="campo">
+          Preço mínimo (R$)
+          <input type="number" id="f-min" min="0" step="10" placeholder="Ex.: 200" />
+        </label>
+        <label class="campo">
+          Preço máximo (R$)
+          <input type="number" id="f-max" min="0" step="10" placeholder="Ex.: 700" />
+        </label>
+      </div>
+      <div class="acoes-filtros">
+        <button id="botao-filtrar" class="botao botao-primario" type="button">Aplicar filtros</button>
+        <button id="botao-limpar" class="botao botao-fantasma" type="button">Limpar filtros</button>
+        <span id="resumo" class="resumo"></span>
+      </div>
+    </section>
+
+    <!-- ============ LISTA / GRADE DE PRODUTOS ============ -->
+    <section id="lista-produtos" class="grade-produtos" aria-live="polite"></section>
+    <p id="estado-vazio" class="vazio" hidden>🔍 Nenhum produto foi encontrado com esses filtros.</p>
+
+    <!-- ================== PAGINAÇÃO ================== -->
+    <nav id="paginacao" class="paginacao" aria-label="Páginas de produtos"></nav>
+  </main>
+
+  <!-- ====== MODAL DETALHE DO PRODUTO ====== -->
+  <dialog id="modal-produto" class="modal-produto">
+    <button id="modal-fechar" class="modal-fechar" type="button">✕ fechar</button>
+    <div id="modal-conteudo"></div>
+  </dialog>
+
+  <script src="js/api.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/produtos.js"></script>
+</body>
+</html>

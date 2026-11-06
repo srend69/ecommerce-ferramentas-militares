@@ -1,0 +1,14 @@
+# Dependências
+node_modules/
+
+# Variáveis de ambiente (o exemplo está em dotenv-example.txt)
+.env
+
+# Banco de dados SQLite gerado pela migration
+banco.db
+*.db-journal
+
+# Logs e temporários
+*.log
+npm-debug.log*
+.DS_Store

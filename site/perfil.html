@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MILGEAR — Perfil do cliente</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪖</text></svg>" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header id="cabecalho"></header>
+
+  <main class="container container-perfil">
+    <section class="cartao cartao-perfil">
+      <div class="cabecalho-perfil">
+        <h1>Perfil do cliente</h1>
+        <span class="etiqueta-protegida">🔒 Rota protegida por JWT</span>
+      </div>
+      <div id="conteudo-perfil">
+        <p class="carregando">Carregando seus dados…</p>
+      </div>
+      <button id="botao-sair" class="botao botao-perigo" type="button">Sair da conta</button>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/perfil.js"></script>
+</body>
+</html>

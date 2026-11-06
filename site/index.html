@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MILGEAR — Login / Cadastro</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪖</text></svg>" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="pagina-autenticacao">
+  <main class="autenticacao">
+    <a class="marca" href="produtos.html">
+      <span class="marca-simbolo">🪖</span>
+      <span class="marca-texto">MILGEAR<small>Ferramentas de uso militar</small></span>
+    </a>
+
+    <div class="cartao cartao-autenticacao">
+      <div class="abas">
+        <button id="aba-login" class="aba ativa" type="button">Entrar</button>
+        <button id="aba-cadastro" class="aba" type="button">Criar conta</button>
+      </div>
+
+      <!-- ===================== LOGIN ===================== -->
+      <form id="form-login" class="formulario" novalidate>
+        <h1>Login do cliente</h1>
+        <div id="aviso-login" class="aviso" hidden></div>
+        <label class="campo">
+          E-mail
+          <input type="email" id="login-email" name="email" placeholder="voce@exemplo.com" autocomplete="email" />
+        </label>
+        <label class="campo">
+          Senha
+          <input type="password" id="login-senha" name="senha" placeholder="••••••••" autocomplete="current-password" />
+        </label>
+        <button id="botao-login" class="botao botao-primario" type="submit">Entrar</button>
+        <p class="dica">Sem conta? <a href="#" id="abrir-cadastro">Cadastre-se</a></p>
+      </form>
+
+      <!-- ==================== CADASTRO =================== -->
+      <form id="form-cadastro" class="formulario" hidden novalidate>
+        <h1>Cadastro de cliente</h1>
+        <div id="aviso-cadastro" class="aviso" hidden></div>
+        <label class="campo">
+          Nome completo
+          <input type="text" id="cad-nome" name="nome" placeholder="Ex.: Ana Martins" autocomplete="name" />
+        </label>
+        <label class="campo">
+          E-mail
+          <input type="email" id="cad-email" name="email" placeholder="voce@exemplo.com" autocomplete="email" />
+        </label>
+        <label class="campo">
+          Senha (mínimo 6 caracteres)
+          <input type="password" id="cad-senha" name="senha" placeholder="••••••••" autocomplete="new-password" />
+        </label>
+        <label class="campo">
+          Confirmar senha
+          <input type="password" id="cad-senha2" name="senha2" placeholder="••••••••" autocomplete="new-password" />
+        </label>
+        <button id="botao-cadastro" class="botao botao-primario" type="submit">Cadastrar</button>
+        <p class="dica">Já tem conta? <a href="#" id="abrir-login">Fazer login</a></p>
+      </form>
+    </div>
+
+    <p class="nota-rodape">
+      Repositório único: API Express + SQLite + JWT na raiz · site em <code>/site</code>
+      · <a href="produtos.html">ver catálogo sem login</a>
+    </p>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

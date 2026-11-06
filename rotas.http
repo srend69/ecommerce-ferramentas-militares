@@ -1,0 +1,55 @@
+### Exemplos de requisição — use com a extensão "REST Client" do VS Code.
+### Suba a API antes com "npm start" (porta 3000).
+
+### Cadastro de cliente
+POST http://localhost:3000/cliente
+Content-Type: application/json
+
+{
+  "nome": "Ana Martins",
+  "email": "ana@teste.com",
+  "senha": "123456"
+}
+
+### Login (devolve o token JWT)
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "email": "ana@teste.com",
+  "senha": "123456"
+}
+
+### Perfil do cliente (EXIGE AUTENTICAÇÃO — troque <TOKEN> pelo token do login)
+GET http://localhost:3000/cliente/perfil
+Authorization: Bearer <TOKEN>
+
+### Catálogo completo (página 1)
+GET http://localhost:3000/produto
+
+### Filtro de busca por nome
+GET http://localhost:3000/produto?nome=lanterna
+
+### Ordenação por preço (menor / maior)
+GET http://localhost:3000/produto?ordem=menor
+GET http://localhost:3000/produto?ordem=maior
+
+### Filtro por categoria
+GET http://localhost:3000/produto?categoria=ferramenta
+GET http://localhost:3000/produto?categoria=socorros
+
+### Filtro por preço mínimo e máximo
+GET http://localhost:3000/produto?preco_min=200&preco_max=700
+
+### Paginação (limite fixo de 10 por página)
+GET http://localhost:3000/produto?pagina=1
+GET http://localhost:3000/produto?pagina=2
+
+### Tudo combinado
+GET http://localhost:3000/produto?nome=a&ordem=menor&preco_min=50&preco_max=200&pagina=1
+
+### Categorias disponíveis
+GET http://localhost:3000/produto/categorias
+
+### Detalhe de um produto
+GET http://localhost:3000/produto/1

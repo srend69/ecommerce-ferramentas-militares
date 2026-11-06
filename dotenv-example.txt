@@ -1,0 +1,20 @@
+# Exemplo de arquivo .env para o projeto MILGEAR.
+# Copie o conteúdo abaixo para um arquivo chamado ".env"
+# (na raiz do projeto) e ajuste os valores.
+
+# Porta em que a API e o site sobem
+PORT=3000
+
+# Chave usada para assinar/validar os tokens JWT.
+# TROQUE por um segredo seu, longo e aleatório.
+JWT_SECRET=troque-este-segredo-por-um-seu-secreto
+
+# Caminho/arquivo do banco de dados SQLite usado pela conexão em db.js
+DB_FILE=banco.db
+
+# --- OPCIONAL: busca de produtos na RapidAPI (npm run seed) ---
+# Sem estas chaves, o seed usa o catálogo local (seed-data.js).
+RAPIDAPI_KEY=sua-chave-da-rapidapi
+RAPIDAPI_HOST=real-time-amazon-data.p.rapidapi.com
+# Termo de busca usado na RapidAPI
+RAPIDAPI_BUSCA=military tools
