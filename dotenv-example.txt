@@ -1,6 +1,6 @@
-# Exemplo de arquivo .env para o projeto MILGEAR.
+# Exemplo de arquivo .env para o projeto MILGEAR (fica na RAIZ).
 # Copie o conteúdo abaixo para um arquivo chamado ".env"
-# (na raiz do projeto) e ajuste os valores.
+# e ajuste os valores.
 
 # Porta em que a API e o site sobem
 PORT=3000
@@ -9,7 +9,8 @@ PORT=3000
 # TROQUE por um segredo seu, longo e aleatório.
 JWT_SECRET=troque-este-segredo-por-um-seu-secreto
 
-# Caminho/arquivo do banco de dados SQLite usado pela conexão em db.js
+# Caminho do arquivo do banco de dados SQLite usado pela
+# conexão em database/db.js (caminho relativo à pasta database/)
 DB_FILE=banco.db
 
 # --- OPCIONAL: busca de produtos na RapidAPI (npm run seed) ---

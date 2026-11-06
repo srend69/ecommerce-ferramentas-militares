@@ -1,13 +1,13 @@
 {
   "name": "ecommerce-ferramentas-militares",
   "version": "1.0.0",
-  "description": "MILGEAR - E-commerce de ferramentas de uso militar. API Express + SQLite (JWT) na raiz e site em /site.",
-  "main": "server.js",
+  "description": "MILGEAR - E-commerce de ferramentas de uso militar. Backend (Express + SQLite + JWT), frontend em /frontend, migrations em /database e documentação em /docs.",
+  "main": "backend/server.js",
   "scripts": {
-    "dev": "node --watch server.js",
-    "start": "node server.js",
-    "migrate": "node migrate.js",
-    "seed": "node seed.js"
+    "dev": "node backend/server.js",
+    "start": "node backend/server.js",
+    "migrate": "node database/migrate.js",
+    "seed": "node database/seed.js"
   },
   "keywords": [
     "api",

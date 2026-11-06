@@ -15,8 +15,8 @@
 // =========================================================
 const express = require('express');
 
-const { get, all } = require('../db');
-const { CATEGORIAS } = require('../seed-data');
+const { get, all } = require('../../database/db');
+const { CATEGORIAS } = require('../../database/seed-data');
 
 const router = express.Router();
 

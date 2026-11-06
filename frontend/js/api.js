@@ -5,7 +5,7 @@
    ========================================================= */
 
 /* Rodando pelo próprio servidor, deixe API_BASE = "" e abra o
-   site em http://localhost:3000 (o servidor entrega /site).
+   site em http://localhost:3000 (o backend entrega o frontend).
    Se publicar o site em outro lugar (GitHub Pages, Vercel etc.),
    troque pela URL pública da API, ex.: 'https://sua-api.onrender.com'. */
 const API_BASE = location.protocol === 'file:' ? 'http://localhost:3000' : '';

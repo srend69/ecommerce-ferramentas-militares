@@ -4,8 +4,9 @@ node_modules/
 # Variáveis de ambiente (o exemplo está em dotenv-example.txt)
 .env
 
-# Banco de dados SQLite gerado pela migration
+# Banco de dados SQLite gerado pelas migrations
 banco.db
+*.db
 *.db-journal
 
 # Logs e temporários

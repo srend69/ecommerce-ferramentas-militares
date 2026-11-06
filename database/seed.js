@@ -7,7 +7,8 @@
 // variáveis RAPIDAPI_* estiverem configuradas no .env, busca
 // os produtos reais na RapidAPI antes de gravar no banco.
 // =========================================================
-require('dotenv').config();
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, '..', '.env') });
 
 const { run, db } = require('./db');
 const { PRODUTOS } = require('./seed-data');

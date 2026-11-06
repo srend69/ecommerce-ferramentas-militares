@@ -1,12 +1,13 @@
 // =========================================================
-// server.js — Servidor da API + Site (repositório único).
+// server.js — Servidor do BACKEND (API) que também entrega
+// o FRONTEND (pasta ../frontend). Repositório único.
 //   API:     /cliente  /login  /produto
-//   Site:    é servido pela pasta "site" (http://localhost:PORTA)
+//   Site:    http://localhost:PORTA (páginas do frontend/)
 // Uso: npm start   (ou npm run dev para recarregar automaticamente)
 // =========================================================
-require('dotenv').config();
-
 const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, '..', '.env') });
+
 const express = require('express');
 const cors = require('cors');
 
@@ -14,10 +15,10 @@ const clienteRoutes = require('./routes/cliente');
 const loginRoutes = require('./routes/login');
 const produtoRoutes = require('./routes/produto');
 
-// Garante que o banco exista/abra desde o boot da aplicação.
-require('./db');
+// Garante que a conexão (database/db.js) abra desde o boot.
+require('../database/db');
 
-// Segredo do JWT deve estar no .env (veja dotenv-example.txt).
+// Segredo do JWT deve estar no .env da raiz (veja dotenv-example.txt).
 if (!process.env.JWT_SECRET) {
   console.warn('⚠️  JWT_SECRET não definida no .env — usando um segredo padrão (troque no .env!).');
   process.env.JWT_SECRET = 'segredo-padrao-troque-em-env';
@@ -28,8 +29,8 @@ const app = express();
 app.use(cors()); // permite que o site acesse a API
 app.use(express.json()); // habilita JSON no corpo das requisições
 
-// Servir o site (pasta "site") junto com a API — repositório único.
-app.use(express.static(path.join(__dirname, 'site')));
+// Servir o FRONTEND (pasta ../frontend) junto com a API.
+app.use(express.static(path.join(__dirname, '..', 'frontend')));
 
 // Rotas da API
 app.use('/cliente', clienteRoutes);
